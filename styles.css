@@ -1,0 +1,79 @@
+h1 {
+  text-transform: uppercase;
+  padding-top: 40px;
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h2,
+h3,
+h5 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "Dosis", sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  left: 18px;
+}
+
+.container {
+  max-width: 100%;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  left: 25%;
+}
+
+.card {
+  position: relative;
+  top: 50px;
+  border: solid;
+  box-shadow: 10px 5px 5px grey;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+
+.form-group {
+  padding-top: 20px;
+}
+
+.btn-dark {
+  border-radius: 4px;
+}
+
+.date {
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  padding-top: 40px;
+  color: orangered;
+}
+
+.days {
+  font-family: "Dosis", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.image-prediction {
+  font-size: 40px;
+}
+
+.temperature {
+  font-family: "Work Sans", sans-serif;
+  padding-bottom: 20px;
+}
+
+.highest-temperature {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.lowest-temperature {
+  font-size: 12px;
+}
