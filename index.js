@@ -23,7 +23,7 @@ function formatDate(date) {
     currentMinutes = `0${currentMinutes}`;
   }
 
-  return `${day} ${currentHours}: ${currentMinutes}`;
+  return `${day}, ${currentHours}:${currentMinutes}`;
 }
 
 let currentDateAndTime = document.querySelector("#date");
@@ -68,7 +68,24 @@ function showTemp(response) {
   lowTempElement.innerHTML = `L: ${lowTemp}`;
 }
 
+function showPosition(position) {
+  console.log(position);
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "e0346efbac786e6f2f5f0a80627da715";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(showTemp);
+}
+
+function searchGeoLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 let form = document.getElementById("search-form");
 form.addEventListener("submit", displayWeather);
+
+let geoLocationButton = document.getElementById("geo-tag-button");
+geoLocationButton.addEventListener("click", searchGeoLocation);
 
 enterCity("Toronto");
