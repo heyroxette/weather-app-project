@@ -61,11 +61,11 @@ function showTemp(response) {
 
   let highTempElement = document.getElementById("highest");
   let highTemp = Math.round(response.data.main.temp_max);
-  highTempElement.innerHTML = `H: ${highTemp}`;
+  highTempElement.innerHTML = `H: ${highTemp}°`;
 
   let lowTempElement = document.getElementById("lowest");
   let lowTemp = Math.round(response.data.main.temp_min);
-  lowTempElement.innerHTML = `L: ${lowTemp}`;
+  lowTempElement.innerHTML = `L: ${lowTemp}°`;
 }
 
 function showPosition(position) {
