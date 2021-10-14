@@ -15,6 +15,10 @@ h5 {
   font-weight: 400;
 }
 
+h3 {
+  text-transform: capitalize;
+}
+
 h4 {
   font-family: "Dosis", sans-serif;
   font-size: 60px;

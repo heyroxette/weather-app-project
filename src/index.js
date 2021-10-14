@@ -57,7 +57,7 @@ function showTemp(response) {
   city.innerHTML = response.data.name;
 
   let description = document.getElementById("forecast");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
 
   let highTempElement = document.getElementById("highest");
   let highTemp = Math.round(response.data.main.temp_max);
