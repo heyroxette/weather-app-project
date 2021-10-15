@@ -66,6 +66,12 @@ function showTemp(response) {
   let lowTempElement = document.getElementById("lowest");
   let lowTemp = Math.round(response.data.main.temp_min);
   lowTempElement.innerHTML = `L: ${lowTemp}°`;
+
+  let iconElement = document.getElementById("icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showPosition(position) {
