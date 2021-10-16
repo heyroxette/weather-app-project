@@ -51,14 +51,14 @@ h4 {
 }
 .text-box {
   box-shadow: 3px 3px 3px grey;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 .btn-danger {
   box-shadow: 3px 3px 3px grey;
   transition: all 0.3s ease 0s white;
   background-color: salmon;
   border-color: white;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 
 .btn-danger:hover {
@@ -67,7 +67,8 @@ h4 {
   color: salmon;
 }
 .btn-light {
-  border-radius: 50%;
+  padding: 6px;
+  border-radius: 5px;
   box-shadow: 5px 5px 5px grey;
   transition: all 0.3s ease 0s;
   background-color: salmon;
