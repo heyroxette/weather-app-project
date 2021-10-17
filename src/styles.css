@@ -41,74 +41,39 @@ h4 {
   border: solid;
   border-radius: 20px;
   box-shadow: 10px 5px 5px grey;
-  background-color: #fbab7e;
-
-  background: linear-gradient(90deg, #b9deed, #efefef);
+  background: #43c6ac; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f8ffae,
+    #43c6ac
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f8ffae,
+    #43c6ac
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .form-group {
   padding-top: 20px;
 }
+
 .text-box {
   box-shadow: 3px 3px 3px grey;
   margin-right: 7px;
 }
-.btn-danger {
-  box-shadow: 3px 3px 3px grey;
-  transition: all 0.3s ease 0s white;
-  background-color: salmon;
-  border-color: white;
-  margin-right: 7px;
-}
 
-.btn-danger:hover {
-  background: white;
-  border-color: white;
-  color: salmon;
-}
 .btn-light {
   padding: 6px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px grey;
   transition: all 0.3s ease 0s;
-  background-color: salmon;
+  background-color: #b6eaae;
+  color: white;
 }
 
-.date {
-  font-family: "Work Sans", sans-serif;
-  font-size: 12px;
-  padding-top: 40px;
-  color: orangered;
-}
-
-.days {
-  font-family: "Dosis", sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-}
-.weather-image {
-  text-shadow: white;
-}
-
-.high,
-.low {
+.btn-light:hover {
+  background-color: white;
+  border-color: white;
   color: black;
-  margin-right: 10px;
-}
-.image-prediction {
-  font-size: 40px;
-}
-
-.temperature {
-  font-family: "Work Sans", sans-serif;
-  padding-bottom: 20px;
-}
-
-.highest-temperature {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.lowest-temperature {
-  font-size: 12px;
 }

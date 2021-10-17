@@ -1,4 +1,4 @@
-//time
+//display current time
 function formatDate(date) {
   let currentDay = date.getDay();
   let days = [
@@ -31,16 +31,7 @@ let now = new Date();
 
 currentDateAndTime.innerHTML = formatDate(now);
 
-//week5
-
-function displayWeather(event) {
-  event.preventDefault();
-  let city = document.getElementById("city");
-  let cityInput = document.getElementById("city-input");
-  city.innerHTML = cityInput.value;
-
-  enterCity(cityInput.value);
-}
+//display current weather forecast
 
 function enterCity(city) {
   let apiKey = "e0346efbac786e6f2f5f0a80627da715";
@@ -50,7 +41,9 @@ function enterCity(city) {
 
 function showTemp(response) {
   let temperatureElement = document.getElementById("temperature");
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celsiusTemperature);
   temperatureElement.innerHTML = `${temperature}`;
 
   let city = document.getElementById("city");
@@ -72,10 +65,26 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  let windSpeedElement = document.getElementById("windspeed");
+  let windSpeed = Math.round(response.data.wind.speed);
+  windSpeedElement.innerHTML = `Windspeed: ${windSpeed}`;
 }
 
+function displayWeather(event) {
+  event.preventDefault();
+  let city = document.getElementById("city");
+  let cityInput = document.getElementById("city-input");
+  city.innerHTML = cityInput.value;
+
+  enterCity(cityInput.value);
+}
+
+let form = document.getElementById("search-form");
+form.addEventListener("submit", displayWeather);
+
+//current location geo tag
 function showPosition(position) {
-  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "e0346efbac786e6f2f5f0a80627da715";
@@ -88,10 +97,32 @@ function searchGeoLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let form = document.getElementById("search-form");
-form.addEventListener("submit", displayWeather);
-
 let geoLocationButton = document.getElementById("geo-tag-button");
 geoLocationButton.addEventListener("click", searchGeoLocation);
+
+//convert to fahrenheit
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.getElementById("temperature");
+  let degreeElement = document.getElementById("degrees");
+  let degreeButton = document.getElementById("degree-button");
+
+  if (event.target.value === "°F") {
+    degreeElement.innerHTML = "°F";
+    degreeButton.value = "°C";
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  } else if (event.target.value === "°C") {
+    degreeElement.innerHTML = "°C";
+    degreeButton.value = "°F";
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  }
+}
+
+let fahrenheitButton = document.getElementById("degree-button");
+fahrenheitButton.addEventListener("click", convertToFahrenheit);
+
+let celsiusTemperature = null;
 
 enterCity("Toronto");
