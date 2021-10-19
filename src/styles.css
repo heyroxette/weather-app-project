@@ -77,3 +77,21 @@ h4 {
   border-color: white;
   color: black;
 }
+
+.weather-forecast-date {
+  font-family: "Dosis", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+.weather-forecast-temperature {
+  font-family: "Work Sans", sans-serif;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.weather-forecast-temperature-min {
+  font-size: 12px;
+}
