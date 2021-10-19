@@ -33,6 +33,32 @@ currentDateAndTime.innerHTML = formatDate(now);
 
 //display current weather forecast
 
+function displayForecast() {
+  let forecastElement = document.getElementById("forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  
+    <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <img src="" alt="" width="50" />
+      <div class="weather-forecast-temperature"></div>
+      <span class="weather-forecast-temperature-max">26°</span>
+      <span class="weather-forecast-temperature-min">/19°</span>
+    </div>
+  
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function enterCity(city) {
   let apiKey = "e0346efbac786e6f2f5f0a80627da715";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -49,7 +75,7 @@ function showTemp(response) {
   let city = document.getElementById("city");
   city.innerHTML = response.data.name;
 
-  let description = document.getElementById("forecast");
+  let description = document.getElementById("description");
   description.innerHTML = response.data.weather[0].description;
 
   let highTempElement = document.getElementById("highest");
@@ -124,5 +150,7 @@ let fahrenheitButton = document.getElementById("degree-button");
 fahrenheitButton.addEventListener("click", convertToFahrenheit);
 
 let celsiusTemperature = null;
+
+displayForecast();
 
 enterCity("Toronto");
