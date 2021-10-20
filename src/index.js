@@ -42,7 +42,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let forecast = response.data.daily;
   let forecastElement = document.getElementById("forecast");
 
@@ -85,7 +84,6 @@ function enterCity(city) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "e0346efbac786e6f2f5f0a80627da715";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
