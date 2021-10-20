@@ -11,7 +11,7 @@ h2,
 h3,
 h5 {
   font-family: "Work Sans", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -26,6 +26,7 @@ h4 {
   position: relative;
   left: 18px;
   text-shadow: 8px 5px 5px white;
+  margin: 0;
 }
 
 .container {
@@ -38,7 +39,8 @@ h4 {
 .card {
   position: relative;
   top: 50px;
-  border: solid;
+  bottom: 20px;
+  border: solid 0.2px lightgrey;
   border-radius: 20px;
   box-shadow: 10px 5px 5px grey;
   background: #43c6ac; /* fallback for old browsers */
@@ -80,6 +82,7 @@ h4 {
 
 .weather-forecast {
   padding-top: 20px;
+  white-space: nowrap;
 }
 .weather-forecast-date {
   font-family: "Dosis", sans-serif;
