@@ -25,7 +25,7 @@ h4 {
   font-weight: 900;
   position: relative;
   left: 18px;
-  text-shadow: 8px 5px 5px white;
+  text-shadow: 5px 5px 5px white;
   margin: 0;
 }
 
@@ -52,7 +52,7 @@ p {
   bottom: 20px;
   border: solid 0.2px lightgrey;
   border-radius: 20px;
-  box-shadow: 10px 5px 5px grey;
+  box-shadow: 10px 5px 5px lightgray;
   background: #43c6ac; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
