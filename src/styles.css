@@ -7,6 +7,10 @@ h1 {
   color: #878787;
 }
 
+h2 {
+  color: white;
+}
+
 h2,
 h3,
 h5 {
@@ -53,16 +57,16 @@ p {
   border: solid 0.2px lightgrey;
   border-radius: 20px;
   box-shadow: 10px 5px 5px lightgray;
-  background: #43c6ac; /* fallback for old browsers */
+  background: #70e1f5; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #f8ffae,
-    #43c6ac
+    #ffd194,
+    #70e1f5
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #f8ffae,
-    #43c6ac
+    #ffd194,
+    #70e1f5
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -80,7 +84,7 @@ p {
   border-radius: 5px;
   box-shadow: 5px 5px 5px grey;
   transition: all 0.3s ease 0s;
-  background-color: #b6eaae;
+  background-color: #ffd8a5;
   color: white;
 }
 
@@ -113,6 +117,18 @@ p {
   opacity: 0.7;
 }
 
+.source-code {
+  color: white;
+}
+
+.source-code:hover {
+  color: black;
+}
+
 .name {
   color: black;
+}
+
+.name:hover {
+  color: white;
 }
